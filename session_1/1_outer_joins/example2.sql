@@ -10,8 +10,12 @@
 
 -- write your sql code here
 
-SELECT name AS CourseName,student_id AS Students 
+-- Use IS NULL to check for null values only
+
+
+SELECT name AS CourseName, student_id AS Students 
 FROM 
 Courses LEFT JOIN StudentCourses 
 ON Courses.id=StudentCourses.course_id 
+WHERE Students IS NULL
 ORDER BY CourseName;
